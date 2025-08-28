@@ -32,4 +32,4 @@ footer{max-width:var(--maxw);margin:40px auto 0 auto;opacity:.8}
   nav li{display:block;margin:6px 0}
   body{padding:16px}
 }
-
+.card video { width:100%; height:auto; display:block; }
