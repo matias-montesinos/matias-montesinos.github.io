@@ -1,1 +1,35 @@
+/* Typography & base */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+:root{
+  --bg:#1b1b1b; --fg:#B5E8B0; --h:#D8B185; --h2:#D8B185; --link:#D8B185; --link-hover:#E6C7A1;
+  --maxw:900px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:'Courier Prime',monospace}
+body{padding:20px}
+main{max-width:var(--maxw);margin:0 auto;line-height:1.6}
+h1,h2,h3{color:var(--h)}
+p,li{font-size:1.05em}
+
+/* Header & nav */
+header{max-width:var(--maxw);margin:0 auto 10px auto}
+header h1{margin:.2rem 0}
+header p{margin:.2rem 0 .6rem 0}
+nav ul{list-style:none;margin:0;padding:0}
+nav li{display:inline-block;margin-right:16px}
+a{color:var(--link);text-decoration:none}
+a:hover{color:var(--link-hover)}
+.nav-active{border-bottom:2px solid var(--h)}
+
+/* Sections */
+.section{margin-top:30px}
+
+/* Footer */
+footer{max-width:var(--maxw);margin:40px auto 0 auto;opacity:.8}
+
+/* Responsive */
+@media (max-width:640px){
+  nav li{display:block;margin:6px 0}
+  body{padding:16px}
+}
 
