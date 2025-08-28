@@ -6,26 +6,29 @@
   <title>Gallery · Matías Montesinos</title>
   <link rel="stylesheet" href="/assets/css/style.css">
   <style>
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 15px;
-      margin-top: 30px;
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:15px;
+      margin-top:30px;
     }
-    .card {
-      border: 2px solid #D8B185;
-      border-radius: 4px;
-      padding: 8px;
+    /* Sin borde en el contenedor (evita los rectángulos) */
+    .card{ border:0; padding:0; }
+
+    /* Borde solo en el media (imagen/video) */
+    .card img,
+    .card video{
+      width:100%;
+      height:auto;
+      display:block;
+      border:2px solid #D8B185;
+      border-radius:4px;
     }
-    .card img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .card figcaption {
-      margin-top: 6px;
-      font-size: 0.95em;
-      opacity: 0.9;
+
+    .card figcaption{
+      margin-top:6px;
+      font-size:.95em;
+      opacity:.9;
     }
   </style>
 </head>
@@ -50,29 +53,26 @@
     <h2>Gallery</h2>
     <p>Simulation snapshots, figures, and outreach images.</p>
 
-    <!--
-      Sube tus imágenes a /assets/img/ y reemplaza las rutas de ejemplo.
-      Aunque aún no subas imágenes, la página debe cargar y mostrar el título.
-    -->
     <div class="gallery">
       <figure class="card">
-  <video controls autoplay muted loop playsinline
-         poster="/assets/img/poster_animacion.jpg">
-    <source src="/assets/vid/sim_radmc3d.mp4" type="video/mp4">
-    <!-- Opcional: WebM para navegadores que lo prefieran -->
-    <!-- <source src="/assets/vid/mi_animacion.webm" type="video/webm"> -->
-    Your browser does not support the video tag.
-  </video>
-  <figcaption>Protoplanetary disk — vortex evolution (FARGO3D).</figcaption>
-</figure>
+        <video controls autoplay muted loop playsinline
+               poster="/assets/img/poster_animacion.jpg">
+          <source src="/assets/vid/sim_radmc3d.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <figcaption>Protoplanetary disk — vortex evolution (FARGO3D).</figcaption>
+      </figure>
+
       <figure class="card">
         <img src="/assets/img/example1.jpg" alt="Example 1">
         <figcaption>Example 1</figcaption>
       </figure>
+
       <figure class="card">
         <img src="/assets/img/example2.jpg" alt="Example 2">
         <figcaption>Example 2</figcaption>
       </figure>
+
       <figure class="card">
         <img src="/assets/img/example3.jpg" alt="Example 3">
         <figcaption>Example 3</figcaption>
@@ -80,7 +80,6 @@
     </div>
   </main>
 
-  <!-- Footer con íconos -->
   <footer>
     <p>© Matías Montesinos</p>
     <div style="margin-top:10px;">
