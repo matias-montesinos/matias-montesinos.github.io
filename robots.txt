@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://matias-montesinos.github.io/sitemap.xml
