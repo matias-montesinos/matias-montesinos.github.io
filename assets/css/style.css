@@ -33,3 +33,10 @@ footer{max-width:var(--maxw);margin:40px auto 0 auto;opacity:.8}
   body{padding:16px}
 }
 .card video { width:100%; height:auto; display:block; }
+/* Gallery tweaks */
+.card{ border:0; padding:0; }
+.card img,.card video{ 
+  width:100%; height:auto; display:block;
+  border:2px solid #D8B185; border-radius:4px;
+}
+.card figcaption{ margin-top:6px; font-size:.95em; opacity:.9; }
