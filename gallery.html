@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery · Matías Montesinos</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 30px;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border: 2px solid #D8B185;
+      border-radius: 4px;
+      transition: transform 0.2s;
+    }
+    .gallery img:hover {
+      transform: scale(1.02);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Matías Montesinos</h1>
+    <p>Astrophysicist & Professor<br>
+    Department of Physics, Universidad Técnica Federico Santa María</p>
+    <nav>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/research.html">Research</a></li>
+        <li><a href="/publications.html">Publications</a></li>
+        <li><a href="/teaching.html">Teaching</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/gallery.html" class="nav-active">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Gallery</h2>
+    <p>Simulation snapshots, figures, and outreach images.</p>
+
+    <div class="gallery">
+      <img src="/assets/img/example1.jpg" alt="Example 1">
+      <img src="/assets/img/example2.jpg" alt="Example 2">
+      <img src="/assets/img/example3.jpg" alt="Example 3">
+      <!-- Add more images here -->
+    </div>
+  </main>
+
+  <footer>
+    <p>© Matías Montesinos</p>
+  </footer>
+</body>
+</html>
