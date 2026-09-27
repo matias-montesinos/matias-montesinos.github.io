@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planeta tipo Júpiter en formación</title>
+  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}</style>
+</head>
+<body>
+  <a-scene
+    mindar-image="imageTargetSrc: ./targets.mind; autoStart: true; uiScanning: true; uiLoading: no; filterMinCF: 0.001; filterBeta: 0.01;"
+    color-space="sRGB"
+    renderer="colorManagement: true, physicallyCorrectLights"
+    vr-mode-ui="enabled: false"
+    device-orientation-permission-ui="enabled: false">
+
+    <a-assets>
+      <video id="ar-video" src="./video.mp4" preload="auto" loop muted
+             playsinline webkit-playsinline crossorigin="anonymous"></video>
+    </a-assets>
+
+    <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+    <a-entity id="target0" mindar-image-target="targetIndex: 0">
+      <!-- El plano cubre SOLO el recuadro del render, no la lamina entera.
+           Numeros calculados por crear_lamina_ar.py -- no editar a mano. -->
+      <a-plane position="0.00000 -0.00167 0"
+               width="0.89000" height="0.89000"
+               material="shader: flat; src: #ar-video"></a-plane>
+    </a-entity>
+  </a-scene>
+
+  <script>
+    const video = document.getElementById('ar-video');
+    const target = document.getElementById('target0');
+    target.addEventListener('targetFound', () => video.play().catch(e => console.warn(e)));
+    target.addEventListener('targetLost', () => video.pause());
+    document.body.addEventListener('click', () => {
+      if (video.paused) video.play().then(() => video.pause()).catch(e => console.warn(e));
+    }, { once: true });
+  </script>
+</body>
+</html>
